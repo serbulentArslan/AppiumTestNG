@@ -18,8 +18,14 @@ public class AppFactory {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("emulator-5554")
                 .setPlatformVersion("10.0")
-                .setAppPackage("com.android.dialer")
-                .setAppActivity("com.android.dialer.main.impl.MainActivity");
+                .setAppPackage("com.saucelabs.mydemoapp.rn") // mydemoapp
+                .setAppActivity("com.saucelabs.mydemoapp.rn.MainActivity"); // mydemoapp
+
+                //.setAppPackage("com.wdiodemoapp") // webdriver.io
+                //.setAppActivity("com.wdiodemoapp.MainActivity"); // webdriver.io
+
+                //.setAppPackage("com.android.dialer") // phone app
+                //.setAppActivity("com.android.dialer.main.impl.MainActivity"); // phone app
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
         AppDriver.setDriver(driver);

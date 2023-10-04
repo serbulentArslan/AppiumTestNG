@@ -17,11 +17,11 @@ public class AppiumServer {
                 .usingPort(4723)
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
                 .withLogFile(new File("Appiumlog.txt"))
-                .withIPAddress("127.0.0.1");
+                .withIPAddress("127.0.0.1")
+                .withArgument(GeneralServerFlag.USE_PLUGINS,"element-wait,gestures");
 
-        if(AppData.useElementWaitPlugin.contains("true")){
-            builder.withArgument(GeneralServerFlag.USE_PLUGINS, "element-wait");
-        }
+
+
 
         //.withArgument(GeneralServerFlag.BASEPATH, "wd/hub")
         server = AppiumDriverLocalService.buildService(builder);
