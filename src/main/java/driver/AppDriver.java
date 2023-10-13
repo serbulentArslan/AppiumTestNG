@@ -5,12 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class AppDriver {
     private static final ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
-    private static AppDriver instance = null;
+    private static AppDriver instance;
 
     private AppDriver(){
 
     }
-
     public static AppDriver getInstance(){
         if(instance==null){
             instance = new AppDriver();

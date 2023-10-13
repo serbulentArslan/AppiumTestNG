@@ -4,9 +4,12 @@ import base.BaseTest;
 import base.Util;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static driver.AppDriver.getCurrentDriver;
+
+
 
 public class ZoomActions extends BaseTest {
 
@@ -19,6 +22,8 @@ public class ZoomActions extends BaseTest {
                 AppiumBy.xpath("//android.view.View[@resource-id='signature-pad']"));
 
         Util.zoomIn(drawingPanel,200);
+
+        Assert.assertTrue(drawingPanel.isDisplayed());
     }
 
     @Test
